@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     public GameObject selectRing;
+    public GameObject navPos;
 
     private Camera cam;
     private NavMeshAgent agent;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerSelected = false;
                     selectRing.SetActive(false);
+                    navPos.SetActive(false);
                 }
                 
             }
@@ -58,6 +60,8 @@ public class PlayerController : MonoBehaviour
                 {
                     selectedEnemy = hit.collider.gameObject;
                     enemySelected = true;
+                    navPos.SetActive(false);
+
 
                 }
 
@@ -65,6 +69,10 @@ public class PlayerController : MonoBehaviour
                 {
                     agent.SetDestination(hit.point);
                     enemySelected = false;
+                    navPos.transform.position = hit.point;
+                    navPos.transform.parent = null;
+                    navPos.SetActive(true);
+                    Debug.Log("set  postition");
                 }
 
             }
@@ -93,5 +101,10 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        //else if(enemySelected == false)
+        //{
+
+        //}
     }
 }
