@@ -188,8 +188,10 @@
     <Compile Include="Assets\Scripts\Core\Utilities\Timer.cs" />
     <Compile Include="Assets\Scripts\Core\Utilities\VectorHelper.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\FX\TideAnim.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\Affector.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\AttackAffector.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\CurrencyAffector.cs" />

@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         //Get list of all players by tag
         Players = GameObject.FindGameObjectsWithTag("Player");
 
-        //The Search frequency for new enemies
+        //The Search frequency for new Players
         InvokeRepeating("findNearstPlayer", 2.0f, 0.5f);
     }
 
@@ -67,6 +67,7 @@ public class EnemyController : MonoBehaviour
             }
 
         }
+              
 
         return NearestPlayer;
 

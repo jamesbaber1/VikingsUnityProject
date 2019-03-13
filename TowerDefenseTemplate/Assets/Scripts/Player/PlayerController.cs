@@ -1,10 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    public float attractionRadius = 7f;
     public GameObject selectRing;
     public GameObject navPos;
+
+
+
+    private float enemyDistance;
+    private GameObject enemyPlayer;
+    private List<float> enemyDistances = new List<float>();
+    private GameObject NearestEnemy;
+    private GameObject[] Enemys;
+
+
 
     private Camera cam;
     private NavMeshAgent agent;
@@ -18,8 +31,8 @@ public class PlayerController : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
         agent = gameObject.GetComponent<NavMeshAgent>();
 
+        InvokeRepeating("updateSelectEnemyPos", 0.5f, 0.5f);
 
-        InvokeRepeating("findEnemy", 2.0f, 0.5f);
     }
 
 
@@ -61,50 +74,80 @@ public class PlayerController : MonoBehaviour
                     selectedEnemy = hit.collider.gameObject;
                     enemySelected = true;
                     navPos.SetActive(false);
+                    Debug.Log("Enemy is selected");
 
 
                 }
 
-                if (playerSelected == true)
+                if (playerSelected == true && enemySelected == false)
                 {
                     agent.SetDestination(hit.point);
                     enemySelected = false;
                     navPos.transform.position = hit.point;
                     navPos.transform.parent = null;
                     navPos.SetActive(true);
-                    Debug.Log("set  postition");
                 }
 
             }
         }
 
+        //if(playerSelected == false && enemySelected == false)
+        //{
+        //    NearestEnemy = findNearestEnemy();
+
+        //    if (enemyDistance < attractionRadius)
+        //    {
+        //        agent.SetDestination(NearestEnemy.transform.position);
+        //    }
+
+        //    else
+        //    {
+        //        agent.SetDestination(transform.position);
+        //    }
+        //}
         
-
-        
-
-
 
     }
 
-    private void findEnemy()
+    private void updateSelectEnemyPos()
     {
         if (enemySelected)
         {
             if (selectedEnemy != null)
             {
                 agent.SetDestination(selectedEnemy.transform.position);
+                enemySelected = false;
             }
             else
             {
-                agent.SetDestination(this.transform.position);
+                agent.SetDestination(transform.position);
                 enemySelected = false;
             }
 
         }
-
-        //else if(enemySelected == false)
-        //{
-
-        //}
     }
+
+
+
+    //private GameObject findNearestEnemy()
+    //{
+    //    Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+    //    enemyDistances.Clear();
+
+    //    foreach (GameObject tmpNearestEnemy in Enemys)
+    //    {
+    //        enemyDistance = Vector3.Distance(tmpNearestEnemy.transform.position, this.transform.position);
+    //        enemyDistances.Add(enemyDistance);
+
+    //        if (enemyDistance <= enemyDistances.Min())
+    //        {
+    //            NearestEnemy = tmpNearestEnemy;
+    //            enemyDistance = enemyDistances.Min();
+    //        }
+
+    //    }
+
+    //    return NearestEnemy;
+
+    //}
 }
