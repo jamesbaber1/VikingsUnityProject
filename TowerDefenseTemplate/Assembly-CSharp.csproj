@@ -169,6 +169,7 @@
     <Compile Include="Assets\Scripts\Core\Input\TouchInfo.cs" />
     <Compile Include="Assets\Scripts\Core\Input\TouchInput.cs" />
     <Compile Include="Assets\Scripts\Core\Input\WheelInfo.cs" />
+    <Compile Include="Assets\Scripts\Core\TurnController.cs" />
     <Compile Include="Assets\Scripts\Core\UI\AnimatingMainMenuPage.cs" />
     <Compile Include="Assets\Scripts\Core\UI\BasicAnimatingMainMenuPage.cs" />
     <Compile Include="Assets\Scripts\Core\UI\IMainMenuPage.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Assets\Scripts\FX\TideAnim.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Player\SlingTowerAnimation.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\Affector.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\AttackAffector.cs" />
     <Compile Include="Assets\Scripts\TowerDefense\Affectors\CurrencyAffector.cs" />

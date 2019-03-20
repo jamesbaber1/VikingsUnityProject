@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Prototype02_TowerLibrary
   m_EditorClassIdentifier: 
   configurations:
-  - {fileID: 114126723238285906, guid: 966ea7814d8551a41819de1e2d0745fa, type: 3}
+  - {fileID: 114126723238285906, guid: d92749c892d7f0b4f83af3605fbb6831, type: 3}
   - {fileID: 114126723238285906, guid: ed26eab1854af5a43a00a0596655a91b, type: 3}

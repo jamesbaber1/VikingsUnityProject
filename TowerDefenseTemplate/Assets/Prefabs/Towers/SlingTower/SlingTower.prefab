@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 114936617866548888}
   m_Layer: 10
   m_Name: SlingTower
-  m_TagString: Untagged
+  m_TagString: TowerMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
         type: 2}
   targetTransform: {fileID: 0}
   levels:
-  - {fileID: 114779466188146336, guid: 20fc78745ff750848be05f490584e792, type: 3}
+  - {fileID: 114779466188146336, guid: dc097b03f5d76f245b3e1c384fe40a42, type: 3}
   towerName: Sling Tower
   dimensions:
     x: 2

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CustomOutlineToonStyle2
+  m_Name: TreesToon
   m_Shader: {fileID: 4800000, guid: 8b2f353da1dd05244a7bee1562a2306a, type: 3}
   m_ShaderKeywords: _KEYWORD0_ON
   m_LightmapFlags: 5
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorRGBOutlineWidthA:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cc444bb4dbd8aa24883fdd48bb9c284c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Highlight:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: db42359c2f5a86a4691a2f1b8629de83, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0133b697e51ab3841bddac743700ac5a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Specular:
@@ -62,7 +62,7 @@ Material:
     - _RimOff: 0.6
     - _RimOffset: 0.4
     - _RimPower: 1
-    - _ShadowContribution: 0.9
+    - _ShadowContribution: 1
     - _SpecularOffset: -0.95
     - _SpecularSharpness: 0.01
     - _StaticHighLights: 0
@@ -72,7 +72,7 @@ Material:
     - _TessValue: 4
     - __dirty: 0
     m_Colors:
-    - _BaseTint: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseTint: {r: 0.16171236, g: 0.4339623, b: 0.2725473, a: 1}
     - _HighlightTint: {r: 3, g: 3, b: 3, a: 1}
     - _OutlineTint: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 0.22941168, g: 0.3505882, b: 0.4, a: 1}

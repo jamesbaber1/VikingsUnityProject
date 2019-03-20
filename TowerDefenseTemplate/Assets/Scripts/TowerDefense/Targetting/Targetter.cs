@@ -75,7 +75,7 @@ namespace TowerDefense.Targetting
 		/// <summary>
 		/// The current targetables in the collider
 		/// </summary>
-		protected List<Targetable> m_TargetsInRange = new List<Targetable>();
+		public List<Targetable> m_TargetsInRange = new List<Targetable>();
 
 		/// <summary>
 		/// The seconds until a search is allowed

@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         // The enemies intial target is the chief house
-        chiefHouse = GameObject.Find("chiefHouse");
+        chiefHouse = GameObject.Find("chief_house_tier1");
 
         NearestPlayer = chiefHouse;
         agent = gameObject.GetComponent<NavMeshAgent>();
