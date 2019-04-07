@@ -14,6 +14,8 @@ namespace TowerDefense.Level
 	[RequireComponent(typeof(WaveManager))]
 	public class LevelManager : Singleton<LevelManager>
 	{
+        public GameObject turnController;
+        TurnController turnCon;
 		/// <summary>
 		/// The configured level intro. If this is null the LevelManager will fall through to the gameplay state (i.e. SpawningEnemies)
 		/// </summary>
@@ -118,10 +120,15 @@ namespace TowerDefense.Level
 		/// </summary>
 		public event Action homeBaseDestroyed;
 
-		/// <summary>
-		/// Increments the number of enemies. Called on Agent spawn
-		/// </summary>
-		public virtual void IncrementNumberOfEnemies()
+        private void Start()
+        {
+            turnCon = turnController.GetComponent<TurnController>();
+        }
+
+        /// <summary>
+        /// Increments the number of enemies. Called on Agent spawn
+        /// </summary>
+        public virtual void IncrementNumberOfEnemies()
 		{
 			numberOfEnemies++;
 			SafelyCallNumberOfEnemiesChanged();
@@ -153,10 +160,17 @@ namespace TowerDefense.Level
 				numberOfEnemies = 0;
 			}
 
+            if(numberOfEnemies == 0)
+            {
+                turnCon.ActivateBuildMode();
+            }
+
 			if (numberOfEnemies == 0 && levelState == LevelState.AllEnemiesSpawned)
 			{
-				ChangeLevelState(LevelState.Win);
-			}
+				ChangeLevelState(LevelState.Building);
+
+
+            }
 		}
 
 		/// <summary>

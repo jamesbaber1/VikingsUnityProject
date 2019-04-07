@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseCellOffset: 0.4
+    - _BaseCellOffset: 1
     - _BaseCellSharpness: 1
     - _BaseCellshadeOffset: 0
     - _BaseCellshadeSharpness: 0.01
@@ -52,24 +52,24 @@ Material:
     - _DiffuseCellshadeSharpness: 0.01
     - _Float0: 1
     - _HighlightCellOffset: -1
-    - _HighlightCellSharpness: 0.04
+    - _HighlightCellSharpness: 0.001
     - _IndirectContribution: 0.762
     - _IndirectDiffuseContribution: 1
-    - _IndirectSpecularContribution: 1
+    - _IndirectSpecularContribution: 0
     - _Keyword0: 1
     - _NormalScale: 1
-    - _OutlineWidth: 0.00002
+    - _OutlineWidth: 0
     - _RimOff: 0.6
     - _RimOffset: 0.4
     - _RimPower: 1
-    - _ShadowContribution: 1
+    - _ShadowContribution: 0.665
     - _SpecularOffset: -0.95
     - _SpecularSharpness: 0.01
     - _StaticHighLights: 0
     - _TessMax: 25
     - _TessMin: 10
     - _TessPhongStrength: 0.5
-    - _TessValue: 4
+    - _TessValue: 1
     - __dirty: 0
     m_Colors:
     - _BaseTint: {r: 1, g: 1, b: 1, a: 1}

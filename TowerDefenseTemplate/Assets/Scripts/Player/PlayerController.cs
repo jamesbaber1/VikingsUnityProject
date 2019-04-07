@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float attractionRadius = 7f;
     public GameObject selectRing;
-    public GameObject navPos;
+    //public GameObject navPos;
 
 
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerSelected = false;
                     selectRing.SetActive(false);
-                    navPos.SetActive(false);
+                    //navPos.SetActive(false);
                 }
                 
             }
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 {
                     selectedEnemy = hit.collider.gameObject;
                     enemySelected = true;
-                    navPos.SetActive(false);
+                    //navPos.SetActive(false);
                     Debug.Log("Enemy is selected");
 
 
@@ -83,29 +83,14 @@ public class PlayerController : MonoBehaviour
                 {
                     agent.SetDestination(hit.point);
                     enemySelected = false;
-                    navPos.transform.position = hit.point;
-                    navPos.transform.parent = null;
-                    navPos.SetActive(true);
+                    //navPos.transform.position = hit.point;
+                    //navPos.transform.parent = null;
+                    //navPos.SetActive(true);
                 }
 
             }
         }
-
-        //if(playerSelected == false && enemySelected == false)
-        //{
-        //    NearestEnemy = findNearestEnemy();
-
-        //    if (enemyDistance < attractionRadius)
-        //    {
-        //        agent.SetDestination(NearestEnemy.transform.position);
-        //    }
-
-        //    else
-        //    {
-        //        agent.SetDestination(transform.position);
-        //    }
-        //}
-        
+              
 
     }
 
@@ -128,26 +113,4 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-    //private GameObject findNearestEnemy()
-    //{
-    //    Enemys = GameObject.FindGameObjectsWithTag("Enemy");
-    //    enemyDistances.Clear();
-
-    //    foreach (GameObject tmpNearestEnemy in Enemys)
-    //    {
-    //        enemyDistance = Vector3.Distance(tmpNearestEnemy.transform.position, this.transform.position);
-    //        enemyDistances.Add(enemyDistance);
-
-    //        if (enemyDistance <= enemyDistances.Min())
-    //        {
-    //            NearestEnemy = tmpNearestEnemy;
-    //            enemyDistance = enemyDistances.Min();
-    //        }
-
-    //    }
-
-    //    return NearestEnemy;
-
-    //}
 }
