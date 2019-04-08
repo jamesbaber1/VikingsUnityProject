@@ -41,10 +41,10 @@ namespace TowerDefense.Affectors
 		/// <summary>
 		/// Update the currency gain
 		/// </summary>
-		protected virtual void Update()
-		{
-			currencyGainer.Tick(Time.deltaTime);
-		}
+		//protected virtual void Update()
+		//{
+		//	currencyGainer.Tick(Time.deltaTime);
+		//}
 
 		/// <summary>
 		/// Subscribe to currency gain events

@@ -106,7 +106,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   levels:
   - {fileID: 114779466188146336, guid: 48ebf0ad838f7574a976523e53fc07eb, type: 3}
-  towerName: Sling Tower
+  towerName: Militia
   dimensions:
     x: 1
     y: 1

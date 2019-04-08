@@ -40,6 +40,12 @@ namespace TowerDefense.UI.HUD
 			}
 		}
 
+
+        public void addCurrenency(int amount)
+        {
+            m_Currency.AddCurrency(amount);
+        }
+
 		/// <summary>
 		/// Unsubscribe from events
 		/// </summary>

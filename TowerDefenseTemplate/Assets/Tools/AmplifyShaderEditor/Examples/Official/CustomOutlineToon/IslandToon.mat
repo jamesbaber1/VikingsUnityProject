@@ -24,15 +24,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorRGBOutlineWidthA:
-        m_Texture: {fileID: 2800000, guid: e4539acea7fab294c9ce9d270bb17bf2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ba66b2ea5238b840be23e77c1ec8b45, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Highlight:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e4539acea7fab294c9ce9d270bb17bf2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: db42359c2f5a86a4691a2f1b8629de83, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26400c756bdda2f448250eeed3b5ca7c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Specular:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseCellOffset: 1
+    - _BaseCellOffset: -0.462
     - _BaseCellSharpness: 1
     - _BaseCellshadeOffset: 0
     - _BaseCellshadeSharpness: 0.01
@@ -57,12 +57,12 @@ Material:
     - _IndirectDiffuseContribution: 1
     - _IndirectSpecularContribution: 0
     - _Keyword0: 1
-    - _NormalScale: 1
+    - _NormalScale: 0.67
     - _OutlineWidth: 0
     - _RimOff: 0.6
     - _RimOffset: 0.4
     - _RimPower: 1
-    - _ShadowContribution: 0.665
+    - _ShadowContribution: 1
     - _SpecularOffset: -0.95
     - _SpecularSharpness: 0.01
     - _StaticHighLights: 0

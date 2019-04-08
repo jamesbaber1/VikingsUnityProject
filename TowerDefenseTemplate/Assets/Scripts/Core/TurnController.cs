@@ -1,24 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Economy;
+using TowerDefense.UI.HUD;
 
 public class TurnController : MonoBehaviour
 {
+
+
+    public float difficulty = 1.5f;
+    public int GoldMineProduction = 5;
+
+
     public GameObject grid;
     public GameObject waveManager;
     public GameObject addBuildingUI;
     public GameObject boats;
+    public GameObject CurrencyContainer;
 
 
-    public float difficulty = 1.5f;
 
-    float waveDuration = 1.0f;
+    private int goldMineCount = 0;
+    private float waveDuration = 1.0f;
 
     private GameObject[] TowersMenus;
+    private GameObject[] goldMines;
+    private CurrencyUI currency;
 
+
+    private void Start()
+    {
+        currency = CurrencyContainer.GetComponent<CurrencyUI>();
+    }
 
     public void ActivateAttackMode()
     {
+        
         grid.SetActive(false);
         addBuildingUI.SetActive(false);
         TowersMenus = GameObject.FindGameObjectsWithTag("TowerMenu");
@@ -36,6 +53,7 @@ public class TurnController : MonoBehaviour
 
     public void ActivateBuildMode()
     {
+        
         Destroy(GameObject.FindGameObjectWithTag("Boat"));
         grid.SetActive(true);
         waveManager.SetActive(false);
@@ -46,6 +64,16 @@ public class TurnController : MonoBehaviour
         {
             TowerMenu.GetComponent<BoxCollider>().enabled = true;
         }
+
+        goldMines = GameObject.FindGameObjectsWithTag("GoldMine");
+
+        goldMineCount = 0;
+        foreach (GameObject goldMine in goldMines)
+        {
+            goldMineCount++;
+        }
+
+        currency.addCurrenency(GoldMineProduction*goldMineCount);
 
     }
 

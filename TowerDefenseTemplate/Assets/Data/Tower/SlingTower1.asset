@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e2352be0954e359a850a9d99215c6e, type: 3}
   m_Name: SlingTower1
   m_EditorClassIdentifier: 
-  description: 
+  description: Low rate of fire but heavy damage.
   upgradeDescription: 
   cost: 5
   sell: 2
