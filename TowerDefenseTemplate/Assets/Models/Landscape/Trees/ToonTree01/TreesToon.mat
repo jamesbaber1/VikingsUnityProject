@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Highlight:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 997365876f29c394da268d4e84a2d38a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -58,7 +58,7 @@ Material:
     - _IndirectSpecularContribution: 1
     - _Keyword0: 1
     - _NormalScale: 1
-    - _OutlineWidth: 0.00002
+    - _OutlineWidth: 0
     - _RimOff: 0.6
     - _RimOffset: 0.4
     - _RimPower: 1
@@ -72,7 +72,7 @@ Material:
     - _TessValue: 4
     - __dirty: 0
     m_Colors:
-    - _BaseTint: {r: 0.16078432, g: 0.43529412, b: 0.39787775, a: 1}
+    - _BaseTint: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightTint: {r: 3, g: 3, b: 3, a: 1}
     - _OutlineTint: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 0.22941168, g: 0.3505882, b: 0.4, a: 1}

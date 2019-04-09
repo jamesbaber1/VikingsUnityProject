@@ -18,6 +18,11 @@ public class TurnController : MonoBehaviour
     public GameObject boats;
     public GameObject CurrencyContainer;
 
+    public AudioSource gameMusic;
+    public AudioClip AttackMusic;
+    public AudioClip buildMusic;
+
+
 
 
     private int goldMineCount = 0;
@@ -35,7 +40,9 @@ public class TurnController : MonoBehaviour
 
     public void ActivateAttackMode()
     {
-        
+        gameMusic.clip = AttackMusic;
+        gameMusic.Play();
+
         grid.SetActive(false);
         addBuildingUI.SetActive(false);
         TowersMenus = GameObject.FindGameObjectsWithTag("TowerMenu");
@@ -53,7 +60,9 @@ public class TurnController : MonoBehaviour
 
     public void ActivateBuildMode()
     {
-        
+        gameMusic.clip = buildMusic;
+        gameMusic.Play();
+
         Destroy(GameObject.FindGameObjectWithTag("Boat"));
         grid.SetActive(true);
         waveManager.SetActive(false);
