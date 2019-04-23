@@ -59,10 +59,15 @@ namespace TowerDefense.Level
 		/// </summary>
 		public int numberOfEnemies { get; protected set; }
 
-		/// <summary>
-		/// The current state of the level
-		/// </summary>
-		public LevelState levelState { get; protected set; }
+        public void setNumberOfEnemies(int num)
+        {
+            numberOfEnemies = num;
+        }
+
+        /// <summary>
+        /// The current state of the level
+        /// </summary>
+        public LevelState levelState { get; protected set; }
 
 		/// <summary>
 		/// The currency controller

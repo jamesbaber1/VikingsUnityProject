@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
 
-        if (playerDistance < attractionRadius)
+        if (playerDistance < attractionRadius && NearestPlayer.transform.position != null)
         {
             agent.SetDestination(NearestPlayer.transform.position);
         }

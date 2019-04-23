@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Core.Economy;
 using TowerDefense.UI.HUD;
+using TowerDefense.Level;
 
 public class TurnController : MonoBehaviour
 {
@@ -17,14 +18,18 @@ public class TurnController : MonoBehaviour
     public GameObject addBuildingUI;
     public GameObject boats;
     public GameObject CurrencyContainer;
+    
 
     public AudioSource gameMusic;
     public AudioClip AttackMusic;
     public AudioClip buildMusic;
 
 
+    public GameObject LevelManager;
+    private LevelManager levelManager;
 
-
+    private bool endPhase = false;
+    private bool spawning = false;
     private int goldMineCount = 0;
     private float waveDuration = 1.0f;
 
@@ -36,7 +41,21 @@ public class TurnController : MonoBehaviour
     private void Start()
     {
         currency = CurrencyContainer.GetComponent<CurrencyUI>();
+        levelManager = LevelManager.GetComponent<LevelManager>();
     }
+
+    private void Update()
+    {
+        if(endPhase && !spawning)
+        {
+            levelManager.setNumberOfEnemies(0);
+            ActivateBuildMode();
+            CancelInvoke();
+            endPhase = false;
+        }
+    }
+
+
 
     public void ActivateAttackMode()
     {
@@ -89,10 +108,25 @@ public class TurnController : MonoBehaviour
     void StartSpawing()
     {
         waveManager.SetActive(true);
+        spawning = true;
     }
 
     void StopSpawing()
     {
         waveManager.SetActive(false);
+        InvokeRepeating("findEnemies", 3.0f, 3.0f);
+        spawning = false;
+    }
+
+    void findEnemies()
+    {
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            endPhase = true;
+        }
+        else
+        {
+            endPhase = false;
+        }
     }
 }

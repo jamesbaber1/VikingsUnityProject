@@ -82,6 +82,7 @@ MonoBehaviour:
   idleCorrectionTime: 2
   attachedCollider: {fileID: 135872954984398384}
   idleWaitTime: 2
+  m_TargetsInRange: []
 --- !u!135 &135872954984398384
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb6b59d40564378ba0b1580a4a9dd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootDropped: 1
+  lootDropped: 0
 --- !u!114 &114847362792086644
 MonoBehaviour:
   m_ObjectHideFlags: 0
