@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +8,9 @@ public class PlayerController : MonoBehaviour
 {
     public float attractionRadius = 7f;
     public GameObject selectRing;
+    public GameObject AnimationMesh;
+
+    private Animator PlayerAnim;
     //public GameObject navPos;
 
 
@@ -25,9 +29,12 @@ public class PlayerController : MonoBehaviour
     private bool enemySelected = false;
     private GameObject selectedEnemy;
 
+    private Vector3 speedTest = new Vector3(0.01f, 0.01f, 0.01f);
+
 
     void Start()
     {
+        PlayerAnim = AnimationMesh.GetComponent<Animator>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() as Camera;
         agent = gameObject.GetComponent<NavMeshAgent>();
 
@@ -39,6 +46,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -90,7 +98,18 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-              
+
+        if (Math.Abs(agent.velocity.x) > speedTest.x && Math.Abs(agent.velocity.y) > speedTest.y && Math.Abs(agent.velocity.z) > speedTest.z)
+        {
+            PlayerAnim.SetBool("Running", true);
+            Debug.Log(agent.velocity);
+        }
+        if (Math.Abs(agent.velocity.x) < speedTest.x && Math.Abs(agent.velocity.y) < speedTest.y && Math.Abs(agent.velocity.z) < speedTest.z)
+        {
+            PlayerAnim.SetBool("Running", false);
+            Debug.Log(agent.velocity);
+        }
+
 
     }
 

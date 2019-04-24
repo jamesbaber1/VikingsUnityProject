@@ -8,6 +8,8 @@ TagManager:
   - TowerMenu
   - Boat
   - GoldMine
+  - Tower
+  - Militia
   layers:
   - Default
   - TransparentFX

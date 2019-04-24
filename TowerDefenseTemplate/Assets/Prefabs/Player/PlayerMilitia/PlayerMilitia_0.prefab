@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attractionRadius: 7
   selectRing: {fileID: 1631039318116154506}
-  navPos: {fileID: 9205213634143187487}
+  AnimationMesh: {fileID: 100000}
 --- !u!136 &4962818667964352823
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -499,6 +499,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 42a707e261da94141a8e82c0880e383b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71c6b22029039c846aa19f2eafea62c2, type: 3}
+--- !u!1 &100000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9146861707208166315, guid: 71c6b22029039c846aa19f2eafea62c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9146861707208264971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &400000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9146861707208136587, guid: 71c6b22029039c846aa19f2eafea62c2,

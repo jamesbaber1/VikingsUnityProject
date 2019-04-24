@@ -24,15 +24,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorRGBOutlineWidthA:
-        m_Texture: {fileID: 2800000, guid: d535307b383e39641a5d113ae0548b1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c01ffb34bd8e4c468fd25e2a3b16eb6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Highlight:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c7770839e3ae85d4dadeb4e89c28cc2f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 4663f7758870ce748b682feea9921a21, type: 3}
+        m_Texture: {fileID: 2800000, guid: bb0d1625368f42645ab47d92d53f6158, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Specular:

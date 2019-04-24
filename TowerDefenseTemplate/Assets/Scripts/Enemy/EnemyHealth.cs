@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject Enemy;
     public Animator EnemyAnim;
 
-
+    private NavMeshAgent agent;
     private float currentHealth;
     private Core.Health.HealthVisualizer healthBar;
     private Dictionary<string, bool> attackingPlayers = new Dictionary<string, bool>();
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -30,11 +32,12 @@ public class EnemyHealth : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             EnemyAnim.SetBool("Attacking", true);
+            agent.isStopped = true;
 
             if (!attackingPlayers.ContainsKey(col.GetInstanceID().ToString()))
             {
                 attackingPlayers.Add(col.GetInstanceID().ToString(), true);
-                StartCoroutine(AddDamage(1, col.GetInstanceID().ToString()));
+                StartCoroutine(AddDamage(1.0f, col.GetInstanceID().ToString()));
                 Debug.Log("New Player " + col.GetInstanceID() + " Detected");
             }
             else
@@ -47,6 +50,7 @@ public class EnemyHealth : MonoBehaviour
     private void OnTriggerExit(Collider col)
     {
         EnemyAnim.SetBool("Attacking", false);
+        agent.isStopped = false;
 
         if (col.gameObject.tag == "Player")
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject HealthBar;
     public GameObject Player;
     public Animator PlayerAnim;
+    private NavMeshAgent agent;
 
 
     private float currentHealth;
@@ -17,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             PlayerAnim.SetBool("Attacking", true);
+            agent.isStopped=true;
 
             if (!attackingEnemies.ContainsKey(col.GetInstanceID().ToString()))
             {
@@ -47,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerExit(Collider col)
     {
         PlayerAnim.SetBool("Attacking", false);
+        agent.isStopped = false;
 
         if (col.gameObject.tag == "Enemy")
         {

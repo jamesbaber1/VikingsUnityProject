@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 8742071446779987940}
   m_Layer: 10
   m_Name: PlayerMilitia
-  m_TagString: Untagged
+  m_TagString: Militia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

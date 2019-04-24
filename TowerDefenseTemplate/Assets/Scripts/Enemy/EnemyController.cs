@@ -74,16 +74,5 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("Hit collider of " + collision.gameObject.name);
-
-    //    //Check for a match with the specified name on any GameObject that collides with your GameObject
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        agent.SetDestination(collision.gameObject.transform.position);
-    //        Debug.Log("Hit collider of " + collision.gameObject.name);
-    //    }
-
-    //}
+    
 }

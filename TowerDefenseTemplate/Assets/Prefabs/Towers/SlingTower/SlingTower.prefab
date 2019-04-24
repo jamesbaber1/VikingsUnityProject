@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageableBehaviour: {fileID: 0}
-  damageScale: 1
+  damageScale: 2
 --- !u!208 &208111389854632630
 NavMeshObstacle:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class TurnController : MonoBehaviour
     private float waveDuration = 1.0f;
 
     private GameObject[] TowersMenus;
+    private GameObject[] Militia;
     private GameObject[] goldMines;
     private CurrencyUI currency;
 
@@ -51,6 +52,7 @@ public class TurnController : MonoBehaviour
             levelManager.setNumberOfEnemies(0);
             ActivateBuildMode();
             CancelInvoke();
+            currency.addCurrenency(GoldMineProduction * goldMineCount);
             endPhase = false;
         }
     }
@@ -65,15 +67,21 @@ public class TurnController : MonoBehaviour
         grid.SetActive(false);
         addBuildingUI.SetActive(false);
         TowersMenus = GameObject.FindGameObjectsWithTag("TowerMenu");
+        Militia = GameObject.FindGameObjectsWithTag("Militia");
 
         foreach (GameObject TowerMenu in TowersMenus)
         {
             TowerMenu.GetComponent<BoxCollider>().enabled =false;
         }
 
+        foreach (GameObject soldier in Militia)
+        {
+            soldier.GetComponent<BoxCollider>().enabled = false;
+        }
+
         Instantiate(boats);
         Invoke("StartSpawing", 10);
-        Invoke("StopSpawing", 20* waveDuration);
+        Invoke("StopSpawing", 15* waveDuration);
         waveDuration = waveDuration * difficulty;
     }
 
@@ -101,7 +109,7 @@ public class TurnController : MonoBehaviour
             goldMineCount++;
         }
 
-        currency.addCurrenency(GoldMineProduction*goldMineCount);
+        
 
     }
 
