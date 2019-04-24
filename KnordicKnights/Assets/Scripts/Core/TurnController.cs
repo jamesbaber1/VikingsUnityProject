@@ -68,7 +68,7 @@ public class TurnController : MonoBehaviour
 
     public void endBug()
     {
-        Militia = GameObject.FindGameObjectsWithTag("Militia");
+        Militia = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject soldier in Militia)
         {
             Destroy(soldier);
@@ -80,6 +80,9 @@ public class TurnController : MonoBehaviour
 
     public void ActivateAttackMode()
     {
+        turnCount++;
+        Turn.text = "End Turn " + turnCount;
+
         gameMusic.clip = AttackMusic;
         gameMusic.Play();
 
@@ -106,8 +109,6 @@ public class TurnController : MonoBehaviour
 
     public void ActivateBuildMode()
     {
-        turnCount++;
-        Turn.text = "End Turn " + turnCount;
         gameMusic.clip = buildMusic;
         gameMusic.Play();
 
