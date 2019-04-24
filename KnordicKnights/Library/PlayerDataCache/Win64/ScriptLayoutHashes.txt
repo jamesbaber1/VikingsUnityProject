@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/James Baber/wkspaces/VikingsUnityProject/TowerDefenseTemplate/Builds/Knordic Knights.exe
+C:/Users/James Baber/wkspaces/VikingsUnityProject/KnordicKnights/Builds/Knordic Knights.exe
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/Levels/Level1_Prototype/You.unity

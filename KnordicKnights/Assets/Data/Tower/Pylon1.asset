@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e2352be0954e359a850a9d99215c6e, type: 3}
   m_Name: Pylon1
   m_EditorClassIdentifier: 
-  description: Produces 5 gold after every turn.
+  description: Produces 10 gold after every turn.
   upgradeDescription: 
   cost: 5
   sell: 2

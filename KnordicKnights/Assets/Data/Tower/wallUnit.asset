@@ -15,7 +15,7 @@ MonoBehaviour:
   description: Use walls to block and reroute your enemys
   upgradeDescription: 
   cost: 1
-  sell: 0
+  sell: 1
   maxHealth: 50
   startingHealth: 50
   icon: {fileID: 21300000, guid: 9ceb934c86ec1b242ac836485d36893a, type: 3}
