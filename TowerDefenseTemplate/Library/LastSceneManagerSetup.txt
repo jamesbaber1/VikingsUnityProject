@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Levels/Level1_Prototype/You.unity
-  isLoaded: 1
-  isActive: 1
