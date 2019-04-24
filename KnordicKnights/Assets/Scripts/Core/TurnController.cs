@@ -4,6 +4,7 @@ using UnityEngine;
 using Core.Economy;
 using TowerDefense.UI.HUD;
 using TowerDefense.Level;
+using UnityEngine.UI;
 
 public class TurnController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TurnController : MonoBehaviour
     public AudioClip AttackMusic;
     public AudioClip buildMusic;
 
+    public Text Turn;
+
 
     public GameObject LevelManager;
     private LevelManager levelManager;
@@ -31,6 +34,7 @@ public class TurnController : MonoBehaviour
     private bool endPhase = false;
     private bool spawning = false;
     private int goldMineCount = 0;
+    private int turnCount = 1;
     private float waveDuration = 1.0f;
 
     private GameObject[] TowersMenus;
@@ -55,6 +59,21 @@ public class TurnController : MonoBehaviour
             currency.addCurrenency(GoldMineProduction * goldMineCount);
             endPhase = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            endBug();
+        }
+    }
+
+    public void endBug()
+    {
+        Militia = GameObject.FindGameObjectsWithTag("Militia");
+        foreach (GameObject soldier in Militia)
+        {
+            Destroy(soldier);
+        }
+        levelManager.setNumberOfEnemies(0);
     }
 
 
@@ -87,6 +106,8 @@ public class TurnController : MonoBehaviour
 
     public void ActivateBuildMode()
     {
+        turnCount++;
+        Turn.text = "End Turn " + turnCount;
         gameMusic.clip = buildMusic;
         gameMusic.Play();
 
